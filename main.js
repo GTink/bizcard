@@ -1,14 +1,20 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Retrieve user input from the query parameters
-    var urlParams = new URLSearchParams(window.location.search);
-    var name = urlParams.get('name');
-    var email = urlParams.get('email');
-    var phone = urlParams.get('phone');
-    var website = urlParams.get('website');
+document.getElementById('businessCardForm').addEventListener('submit', handleFormSubmit);
 
-    // Set the values in the generated landing page
-    document.getElementById('name').textContent = name;
-    document.getElementById('email').textContent = email;
-    document.getElementById('phone').textContent = phone;
-    document.getElementById('website').textContent = website;
-});
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  // Extract the values from the form data
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const phone = formData.get("phone");
+  const website = formData.get("website");
+
+  // Generate the landing page URL with the form data
+  const landingPageUrl = `generated-landing-page.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&website=${encodeURIComponent(website)}`;
+
+  // Redirect to the generated landing page URL
+  window.location.href = landingPageUrl;
+}

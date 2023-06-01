@@ -3,30 +3,111 @@
 <head>
     <title>Generated Landing Page</title>
     <style>
+        body {
+            background-color: #ffffff;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
         .container {
-            max-width: 400px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 20px;
+            border: 1px solid #000000;
+            background-color: #000000;
         }
 
-        h1 {
-            text-align: center;
+        .info-container {
+            margin-bottom: 20px;
         }
 
-        p {
+        .info-label {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .info-value {
             margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #000000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .download-button {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Generated Landing Page</h1>
-        <p><strong>Name:</strong> <span id="name"></span></p>
-        <p><strong>Email:</strong> <span id="email"></span></p>
-        <p><strong>Phone:</strong> <span id="phone"></span></p>
-        <p><strong>Website:</strong> <span id="website"></span></p>
+        <h1>Welcome to Your Generated Landing Page</h1>
+
+        <div class="info-container">
+            <span class="info-label">Name:</span>
+            <input id="name" class="info-value" type="text" readonly>
+        </div>
+
+        <div class="info-container">
+            <span class="info-label">Email:</span>
+            <input id="email" class="info-value" type="text" readonly>
+        </div>
+
+        <div class="info-container">
+            <span class="info-label">Phone:</span>
+            <input id="phone" class="info-value" type="text" readonly>
+        </div>
+
+        <div class="info-container">
+            <span class="info-label">Website:</span>
+            <input id="website" class="info-value" type="text" readonly>
+        </div>
+
+        <a href="#" class="download-button" download="contact-card.vcf">Download Contact Card</a>
+
+        <button class="back-button" onclick="goBack()">Back to Index</button>
     </div>
 
-    <script src="main.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        const phone = urlParams.get('phone');
+        const website = urlParams.get('website');
+
+        document.getElementById('name').value = name;
+        document.getElementById('email').value = email;
+        document.getElementById('phone').value = phone;
+        document.getElementById('website').value = website;
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>

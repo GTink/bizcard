@@ -3,33 +3,54 @@
 <head>
     <title>Digital Business Card Generator</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
         .container {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        input[type="text"], input[type="email"], input[type="tel"], input[type="url"] {
-            width: 100%;
-            padding: 10px;
+        h1 {
+            font-size: 24px;
+            font-weight: bold; /* Adjusted font-weight */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"] {
+            width: 80%;
+            padding: 10px 15px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            text-align: center;
         }
 
         button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #ff0000;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
 
-        img {
-            max-width: 300px;
-            margin-top: 20px;
+        button:hover {
+            background-color: #ff3333;
         }
     </style>
 </head>
@@ -41,7 +62,7 @@
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="tel" name="phone" placeholder="Your Phone Number" required>
             <input type="url" name="website" placeholder="Your Website" required>
-            <button type="submit">Generate QR Code</button>
+            <button type="submit">Generate Business</button>
         </form>
         <div id="qrCodeContainer"></div>
 
