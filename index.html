@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Business Card Generator</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Business Card Generator</h1>
+        <form id="businessCardForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <input type="url" name="website" placeholder="Your Website" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+        <div id="qrCodeContainer"></div>
+
+        <script src="qr-code-generator.js"></script>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
